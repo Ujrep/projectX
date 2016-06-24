@@ -5,9 +5,17 @@
 </style>
 
 <template>
-  <!-- HTML HERE -->
   <div class="Navigation">
-    <!-- Here lies the navigation -->
+    <div class="logo">
+      <span>Adrian Stoian</span>
+    </div>
+    <ul class="buttons">
+      <li>Home</li>
+      <li>Portfolio</li>
+      <li>About</li>
+      <li>Reviews</li>
+      <li>Contact</li>
+    </ul>
   </div>
 </template>
 
