@@ -1,0 +1,14 @@
+<body>
+  <div id="app">
+    <h1>Hello!</h1>
+    <p>
+      <!-- use v-link directive for navigation. -->
+      <a v-link="{ path: '/my-profile' }">My Profile</a>
+      <a v-link="{ path: '/my-settings' }">My Settings</a>
+      <a v-link="{ path: '/my-jobs' }">My Jobs</a>
+    </p>
+    <!-- route outlet -->
+    <router-view></router-view>
+  </div>
+  <script src="build/orbo-app.js"></script>
+</body>

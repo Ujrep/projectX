@@ -1,0 +1,7 @@
+// to test sass
+$background-color: #000;
+body {
+  background-color: $background-color;
+  // to test autoprefixer
+  flex: auto;
+}
