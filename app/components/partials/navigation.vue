@@ -1,7 +1,7 @@
 <style lang="scss">
-
-  // CSS HERE
-
+  .buttons {
+    color: red;
+  }
 </style>
 
 <template>

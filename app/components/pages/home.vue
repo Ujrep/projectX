@@ -17,7 +17,6 @@
 
 <script>
   import Navigation from 'components/partials/navigation.vue';
-  import Header from 'components/partials/header.vue';
   export default {
     data() {
       return {
@@ -26,7 +25,6 @@
     },
     components: {
       'navigation': Navigation,
-      'header': Header,
     }
   };
 </script>
