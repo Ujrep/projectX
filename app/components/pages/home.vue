@@ -11,6 +11,7 @@
     <header></header>
     <heade></heade>
     <portfolio></portfolio>
+    <about></about>
     <!-- html -->
 
   </div>
@@ -21,6 +22,7 @@
   import Navigation from 'components/partials/navigation.vue';
   import Heade from 'components/partials/heade.vue';
   import Portfolio from 'components/partials/portfolio.vue';
+  import About from 'components/partials/about.vue';
   export default {
     data() {
       return {
@@ -31,6 +33,7 @@
       'navigation': Navigation,
       'heade': Heade,
       'portfolio': Portfolio,
+      'about': About,
     }
   };
 </script>
