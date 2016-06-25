@@ -9,6 +9,8 @@
   <div class="Home">
     <navigation></navigation>
     <header></header>
+    <heade></heade>
+    <portfolio></portfolio>
     <!-- html -->
 
   </div>
@@ -17,7 +19,8 @@
 
 <script>
   import Navigation from 'components/partials/navigation.vue';
-  import CustomHeader from 'components/partials/custom-header.vue';
+  import Heade from 'components/partials/heade.vue';
+  import Portfolio from 'components/partials/portfolio.vue';
   export default {
     data() {
       return {
@@ -26,7 +29,8 @@
     },
     components: {
       'navigation': Navigation,
-      'custom-header': CustomHeader,
+      'heade': Heade,
+      'portfolio': Portfolio,
     }
   };
 </script>

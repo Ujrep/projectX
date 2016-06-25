@@ -6,14 +6,15 @@
     -moz-font-smoothing: antialiased;
   }
 
-  $primary-c: #38b48d;
+  $primary: #38b48d;
 
   .logo {
     font-family: 'Catamaran', sans-serif;
     font-weight: normal;
     font-size: 25px;
-    color: red;
-    padding-top: 40px;
+    color: #fff;
+    margin-top: 30px;
+    padding-left: 0;
     @include fontview;
   }
 
@@ -25,7 +26,7 @@
     li {
       display: inline-block;
       padding-left: 40px;
-      margin-top: 40px;
+      margin-top: 30px;
 
       &:last-child {
         height: 40px;
@@ -34,12 +35,12 @@
         margin-left: 20px;
         font-weight: bold;
         border-radius: 10cm;
-        background-color: $primary-c;
+        background-color: $primary;
       }
     }
 
     a {
-      color: red;
+      color: #fff;
       text-transform: uppercase;;
       text-decoration: none;
     }
