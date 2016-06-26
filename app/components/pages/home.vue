@@ -13,6 +13,7 @@
     <portfolio></portfolio>
     <about></about>
     <card></card>
+    <skills></skills>
     <!-- html -->
 
   </div>
@@ -25,6 +26,7 @@
   import Portfolio from 'components/partials/portfolio.vue';
   import About from 'components/partials/about.vue';
   import Card from 'components/partials/card.vue';
+  import Skills from 'components/partials/skills.vue';
   export default {
     data() {
       return {
@@ -37,6 +39,7 @@
       'portfolio': Portfolio,
       'about': About,
       'card': Card,
+      'skills': Skills,
     }
   };
 </script>
