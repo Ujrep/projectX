@@ -28,7 +28,7 @@ $primary: #38b48d;
       margin-top: 40px;
 
       &:last-child {
-        & a{
+        & a {
           padding: 5px 20px;
           font-weight: bold;
           border-radius: 10cm;

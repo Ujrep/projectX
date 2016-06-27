@@ -25,11 +25,8 @@
     -moz-font-smoothing: antialiased;
   }
 
-  .About {
+  .Contact {
     position: relative;
-    @include gradient;
-    margin-top: -120px;
-    z-index: -2;
   }
 
   .contact-title {
@@ -105,6 +102,41 @@
       @include fontView;
     }
   }
+
+  .send-button {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 90px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10cm;
+    color: #fff;
+    margin-top: 50px;
+    background-color: $primary;
+    @include fontView;
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .mail {
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    color: $primary;
+    @include fontView;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
 </style>
 
 <template>
@@ -124,6 +156,8 @@
         <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
       </div>
     </div>
+    <a class="send-button" href="#">SEND</a>
+    <a class="mail col-md-12" href="mailto:stoian.adrian91@gmail.com?subject=Work%20Opportunity">stoian.adrian91@gmail.com</a>
   </div>
   </div>
 </template>
