@@ -9,19 +9,21 @@
   }
 
   .Uxs {
+    position: relative;
+
     & h4 {
       width: 270px;
-      padding: 120px 0;
+      padding: 135px 0;
       margin: 0;
     }
   }
 
   .line01 {
     display: block;
-    position: relative;
+    position: absolute;
     top: 30px;
-    left: 13%;
-    width: 50%;
+    left: 30%;
+    width: 28%;
     height: 122px;
     border-right: 2px solid $yellow;
     border-bottom: 2px solid $yellow;
@@ -32,7 +34,7 @@
       content: "";
       position: absolute;
       top: -10px;
-      left: 100%;
+      left: 99.3%;
       width: 10px;
       height: 10px;
       border: 2px solid $yellow;
@@ -56,7 +58,7 @@
   <div class="Uxs">
       <div class="container">
         <div class="row">
-        <!-- <h4>UX / UI Design</h4> -->
+        <h4>UX / UI Design</h4>
         <div class="line01"></div>
       </div>
     </div>
