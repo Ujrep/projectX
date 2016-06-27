@@ -5,9 +5,8 @@
   $darkGrey: #3d3d3d;
   $lightGrey: #787878;
 
-  @mixin fontview {
+  @mixin fontView {
     font-family: 'Catamaran', sans-serif;
-    font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
   }
@@ -59,14 +58,14 @@
     color: $darkGrey;
     padding: 40px 30px 0;
     margin: 0;
-    @include fontview;
+    @include fontView;
   }
 
   .location {
     font-size: 16px;
     color: $lightGrey;
     padding: 0 30px 0;
-    @include fontview;
+    @include fontView;
   }
 
   .timeline {
@@ -74,7 +73,7 @@
     margin-top: 10px;
     margin-left: 20px;
     color: $lightGrey;
-    @include fontview;
+    @include fontView;
 
     li {
       margin-left: -10px;

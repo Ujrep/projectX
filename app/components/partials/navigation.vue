@@ -2,41 +2,38 @@
 
 $primary: #38b48d;
 
-@mixin fontview {
+@mixin fontView {
   font-family: 'Catamaran', sans-serif;
-  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
 }
 
 .logo {
-    font-family: 'Catamaran', sans-serif;
     font-weight: normal;
     font-size: 25px;
     color: #fff;
     margin-top: 30px;
     padding-left: 0;
-    @include fontview;
+    @include fontView;
   }
 
   .buttons {
     font-size: 16px;
     list-style: none;
-    @include fontview;
+    @include fontView;
 
     li {
       display: inline-block;
       padding-left: 40px;
-      margin-top: 30px;
+      margin-top: 40px;
 
       &:last-child {
-        height: 40px;
-        line-height: 41px;
-        padding: 0px 20px;
-        margin-left: 20px;
-        font-weight: bold;
-        border-radius: 10cm;
-        background-color: $primary;
+        & a{
+          padding: 5px 20px;
+          font-weight: bold;
+          border-radius: 10cm;
+          background-color: $primary;
+        }
       }
     }
 

@@ -5,14 +5,13 @@
   $darkGrey: #3d3d3d;
   $lightGrey: #787878;
 
-  @mixin fontview {
+  @mixin fontView {
     font-family: 'Catamaran', sans-serif;
-    font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
   }
 
-  @mixin fontroboto {
+  @mixin fontRoboto {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 14px;
@@ -54,7 +53,7 @@
           color: #fff;
           text-align: center;
           text-transform: capitalize;
-          @include fontview;
+          @include fontView;
         }
       }
     }
@@ -84,7 +83,7 @@
           color: #fff;
           text-align: center;
           text-transform: capitalize;
-          @include fontview;
+          @include fontView;
         }
       }
     }
@@ -113,7 +112,7 @@
           color: #fff;
           text-align: center;
           text-transform: capitalize;
-          @include fontview;
+          @include fontView;
         }
       }
     }
@@ -142,7 +141,7 @@
           color: #fff;
           text-align: center;
           text-transform: capitalize;
-          @include fontview;
+          @include fontView;
         }
       }
     }
@@ -170,7 +169,7 @@
           color: #fff;
           text-align: center;
           text-transform: capitalize;
-          @include fontview;
+          @include fontView;
         }
       }
     }
@@ -204,28 +203,28 @@
         &::before {
           content: "100%";
           color: #fff;
-          @include fontroboto;
+          @include fontRoboto;
         }
       }
 
       &:nth-child(3) {
         &::before {
           content: "75%";
-          @include fontroboto;
+          @include fontRoboto;
         }
       }
 
       &:nth-child(5) {
         &::before {
           content: "50%";
-          @include fontroboto;
+          @include fontRoboto;
         }
       }
 
       &:nth-child(7) {
         &::before {
           content: "25%";
-          @include fontroboto;
+          @include fontRoboto;
         }
       }
     }

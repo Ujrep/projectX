@@ -8,9 +8,8 @@
     background: linear-gradient(50deg,#0f1b2a, #1a2940);
   }
 
-  @mixin fontview {
+  @mixin fontView {
     font-family: 'Catamaran', sans-serif;
-    font-weight: normal;
     color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -19,7 +18,7 @@
   @mixin headlineView {
     font-family: 'Catamaran', sans-serif;
     font-size: 40px;
-    font-weight: lighter;
+    font-weight: 100;
     color: $primary;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -44,8 +43,9 @@
 
   h3 {
     font-size: 16px;
+    font-weight: normal;
     text-align: center;
-    @include fontview;
+    @include fontView;
   }
 
 </style>

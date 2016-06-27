@@ -3,20 +3,20 @@
   $primary: #38b48d;
   $secondary: #1a2940;
 
-  @mixin fontview {
+  @mixin fontView {
     font-family: 'Catamaran', sans-serif;
-    font-weight: normal;
+    font-weight: 100;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
   }
 
   .description {
     font-size: 60px;
-    font-weight: lighter;
+    font-weight: 100;
     text-align: center;
     margin-top: 230px;
     color: #fff;
-    @include fontview;
+    @include fontView;
 
     .highlight01, .highlight02 {
       color: $primary;

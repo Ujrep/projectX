@@ -1,9 +1,8 @@
 <style lang="scss">
   $yellow: #e4c94b;
 
-  @mixin fontview {
+  @mixin fontView {
     font-family: 'Catamaran', sans-serif;
-    font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
   }
