@@ -27,7 +27,7 @@
 
     .my-skills {
       padding-top: 170px;
-      padding-left: 320px;
+      padding-left: 322px;
     }
 
     .ux {
@@ -35,7 +35,7 @@
       position: relative;
       width: 70px;
       height: 380px;
-      margin-right: 30px;
+      margin-right: 27px;
       background-color: none ;
 
       & span {
@@ -64,7 +64,7 @@
       position: relative;
       width: 70px;
       height: 380px;
-      margin-right: 30px;
+      margin-right: 27px;
       background-color: none ;
 
       & span {
@@ -94,7 +94,7 @@
       position: relative;
       width: 70px;
       height: 380px;
-      margin-right: 30px;
+      margin-right: 27px;
       background-color: none ;
 
       & span {
@@ -123,14 +123,14 @@
       position: relative;
       width: 70px;
       height: 380px;
-      margin-right: 30px;
+      margin-right: 27px;
       background-color: none ;
 
       & span {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 60%;
+        height: 65%;
         background-color: #a785bd;
 
         &:before {
@@ -182,10 +182,10 @@
 
   .lines {
     position: absolute;
-    width: 120%;
+    width: 105%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: -40px;
 
     & span {
       position: relative;
@@ -196,7 +196,7 @@
       &::before {
         content: "";
         position: absolute;
-        left: -80px;
+        left: -50px;
         top: -10px;
       }
 

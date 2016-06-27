@@ -23,6 +23,7 @@
   import Heade from 'components/partials/heade.vue';
   import Portfolio from 'components/partials/portfolio.vue';
   import About from 'components/partials/about.vue';
+  import Uxs from 'components/partials/uxs.vue';
   export default {
     data() {
       return {
@@ -34,6 +35,7 @@
       'heade': Heade,
       'portfolio': Portfolio,
       'about': About,
+      'uxs': Uxs,
     }
   };
 </script>
