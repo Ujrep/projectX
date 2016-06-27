@@ -33,7 +33,8 @@
   }
 
   .contact-title {
-    margin: 0 0 100px 0;
+    margin-top: 0;
+    margin-bottom: 70px;
 
     h2 {
       padding-top: 100px;
@@ -51,19 +52,57 @@
     }
   }
 
+  .form {
+  }
+
   .input {
     border-top: none;
     border-right: none;
     border-left: none;
     border-bottom: 2px solid $primary;
-    background-color: none;
+    background: none;
 
     &:focus {
       outline: none;
     }
 
-    & [type=text] {
+    &::-webkit-input-placeholder, -moz-input-placeholder {
+      font-size: 16px;
+      color: $darkGrey;
+      @include fontView;
+    }
+
+    &:required {
+      font-size: 16px;
+      color: $primary;
       padding-left: 0;
+      @include fontView;
+    }
+  }
+
+  .message {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid $primary;
+    margin-top: 90px;
+    background: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder, -moz-input-placeholder {
+      font-size: 16px;
+      color: $darkGrey;
+      @include fontView;
+    }
+
+    &:required {
+      font-size: 16px;
+      color: $primary;
+      padding-left: 0;
+      @include fontView;
     }
   }
 </style>
@@ -77,10 +116,15 @@
         <h3>llentesque sit amet ex vel ante fringilla fringilla. Praesent non tristique dolor.</h3>
       </div>
     </div>
-      <div class="form">
-        <input class="input name col-md-4" type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required>
+    <div class="form">
+      <div class="row">
+        <input class="input col-md-4" type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required>
+        <input class="input col-md-4" type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required>
+        <input class="input col-md-4" type="tel" placeholder="Phone No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
+        <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
