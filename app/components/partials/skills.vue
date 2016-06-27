@@ -12,11 +12,21 @@
     -moz-font-smoothing: antialiased;
   }
 
+  @mixin fontroboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+  }
+
+
   .Skills {
     position: relative;
 
     .my-skills {
-      padding-top: 60px;
+      padding-top: 170px;
       padding-left: 320px;
     }
 
@@ -166,12 +176,77 @@
     }
   }
 
+  .relative {
+    position: relative;
+  }
+
+  .lines {
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    & span {
+      position: relative;
+      display: block;
+      height: 50px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -80px;
+        top: -10px;
+      }
+
+      &:nth-child(1) {
+        &::before {
+          content: "100%";
+          color: #fff;
+          @include fontroboto;
+        }
+      }
+
+      &:nth-child(3) {
+        &::before {
+          content: "75%";
+          @include fontroboto;
+        }
+      }
+
+      &:nth-child(5) {
+        &::before {
+          content: "50%";
+          @include fontroboto;
+        }
+      }
+
+      &:nth-child(7) {
+        &::before {
+          content: "25%";
+          @include fontroboto;
+        }
+      }
+    }
+  }
+
 </style>
 
 <template>
   <div class="Skills">
     <div class="my-skills col-md-8">
-      <div class="row">
+      <div class="row relative">
+        <div class="lines">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="ux">
           <span></span>
         </div>
