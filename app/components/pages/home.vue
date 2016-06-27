@@ -8,7 +8,12 @@
 
   <div class="Home">
     <navigation></navigation>
-    <custom-header></custom-header>
+    <header></header>
+    <heade></heade>
+    <portfolio></portfolio>
+    <about></about>
+    <card></card>
+    <skills></skills>
     <!-- html -->
 
   </div>
@@ -17,7 +22,11 @@
 
 <script>
   import Navigation from 'components/partials/navigation.vue';
-  import Header from 'components/partials/header.vue';
+  import Heade from 'components/partials/heade.vue';
+  import Portfolio from 'components/partials/portfolio.vue';
+  import About from 'components/partials/about.vue';
+  import Card from 'components/partials/card.vue';
+  import Skills from 'components/partials/skills.vue';
   export default {
     data() {
       return {
@@ -26,7 +35,11 @@
     },
     components: {
       'navigation': Navigation,
-      'custom-header': Header,
+      'heade': Heade,
+      'portfolio': Portfolio,
+      'about': About,
+      'card': Card,
+      'skills': Skills,
     }
   };
 </script>
