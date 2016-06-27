@@ -14,17 +14,18 @@
 
   .Skills {
     position: relative;
-    list-style: none;
 
     .my-skills {
       padding-top: 60px;
+      padding-left: 320px;
     }
 
     .ux {
+      float: left;
       position: relative;
       width: 70px;
       height: 380px;
-      padding: 0;
+      margin-right: 30px;
       background-color: none ;
 
       & span {
@@ -49,10 +50,11 @@
     }
 
     .mobile {
+      float: left;
       position: relative;
       width: 70px;
       height: 380px;
-      padding: 0;
+      margin-right: 30px;
       background-color: none ;
 
       & span {
@@ -60,6 +62,7 @@
         bottom: 0;
         width: 100%;
         height: 95%;
+        margin-right: 30px;
         background-color: #4ccea8;
 
         &:before {
@@ -77,10 +80,11 @@
     }
 
     .motion {
+      float: left;
       position: relative;
       width: 70px;
       height: 380px;
-      padding: 0;
+      margin-right: 30px;
       background-color: none ;
 
       & span {
@@ -105,10 +109,11 @@
     }
 
     .html {
+      float: left;
       position: relative;
       width: 70px;
       height: 380px;
-      padding: 0;
+      margin-right: 30px;
       background-color: none ;
 
       & span {
@@ -167,32 +172,21 @@
   <div class="Skills">
     <div class="my-skills col-md-8">
       <div class="row">
-        <div class="col-md-offset-3 col-md-2">
-          <div class="ux">
-            <span></span>
-          </div>
+        <div class="ux">
+          <span></span>
         </div>
-        <div class="col-md-2">
-          <div class="mobile">
-            <span></span>
-          </div>
+        <div class="mobile">
+          <span></span>
         </div>
-        <div class="col-md-2">
-          <div class="motion">
-            <span></span>
-          </div>
+        <div class="motion">
+          <span></span>
         </div>
-        <div class="col-md-2">
-          <div class="html">
-            <span></span>
-          </div>
+        <div class="html">
+          <span></span>
         </div>
-        <div class="col-md-2">
-          <div class="branding">
-            <span></span>
-          </div>
+        <div class="branding">
+          <span></span>
         </div>
-      </div>
     </div>
   </div>
 </template>
