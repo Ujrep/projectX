@@ -31,30 +31,30 @@
     z-index: -2;
   }
 
-  .title {
+  .about-title {
     margin: 0 0 100px 0;
-  }
 
-  h2 {
-    padding-top: 200px;
-    text-align: center;
-    @include headlineView;
-  }
+    h2 {
+      padding-top: 200px;
+      text-align: center;
+      @include headlineView;
+    }
 
-  h3 {
-    font-size: 16px;
-    font-weight: normal;
-    text-align: center;
-    @include fontView;
+    h3 {
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 0;
+      @include fontView;
+    }
   }
-
 </style>
 
 <template>
   <div class="About">
     <div class="container">
       <div class="row">
-      <div class="title">
+      <div class="about-title">
         <h2>About Me</h2>
         <h3>llentesque sit amet ex vel ante fringilla fringilla. Praesent non tristique dolor.</h3>
       </div>

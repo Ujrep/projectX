@@ -79,7 +79,7 @@
     width: 50px;
     height: 50px;
     margin-left: 5%;
-    background-color: red;
+    background-color: $primary;
   }
 
   .arrow-right {
@@ -88,7 +88,7 @@
     left: 93%;
     width: 50px;
     height: 50px;
-    background-color: green;
+    background-color: $primary;
   }
 </style>
 
