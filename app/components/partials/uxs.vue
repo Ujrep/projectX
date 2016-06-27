@@ -1,4 +1,5 @@
 <style lang="scss">
+  $yellow: #e4c94b;
 
   @mixin fontview {
     font-family: 'Catamaran', sans-serif;
@@ -6,12 +7,58 @@
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
   }
+
+  .Uxs {
+    & h4 {
+      width: 270px;
+      padding: 120px 0;
+      margin: 0;
+    }
+  }
+
+  .line01 {
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 13%;
+    width: 50%;
+    height: 122px;
+    border-right: 2px solid $yellow;
+    border-bottom: 2px solid $yellow;
+    border-bottom-right-radius: 10px;
+    background-color: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 100%;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $yellow;
+      border-radius: 50%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 116px;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $yellow;
+      border-radius: 50%;
+    }
+  }
 </style>
 
 <template>
   <div class="Uxs">
-    <div class="my-skills col-md-8">
-
+      <div class="container">
+        <div class="row">
+        <!-- <h4>UX / UI Design</h4> -->
+        <div class="line01"></div>
+      </div>
     </div>
   </div>
 </template>

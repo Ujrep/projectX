@@ -12,6 +12,7 @@
     <heade></heade>
     <portfolio></portfolio>
     <about></about>
+    <uxs></uxs>
     <!-- html -->
 
   </div>
