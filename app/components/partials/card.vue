@@ -48,7 +48,8 @@
       width: 100%;
       height: 190px;
       border: none;
-      background-color: $lightGrey;
+      background: url('../images/mike.png');
+
     }
   }
 

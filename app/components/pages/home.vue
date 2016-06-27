@@ -13,6 +13,7 @@
     <portfolio></portfolio>
     <about></about>
     <uxs></uxs>
+    <reviews></reviews>
     <!-- html -->
 
   </div>
@@ -25,6 +26,7 @@
   import Portfolio from 'components/partials/portfolio.vue';
   import About from 'components/partials/about.vue';
   import Uxs from 'components/partials/uxs.vue';
+  import Reviews from 'components/partials/reviews.vue';
   export default {
     data() {
       return {
@@ -37,6 +39,7 @@
       'portfolio': Portfolio,
       'about': About,
       'uxs': Uxs,
+      'reviews': Reviews,
     }
   };
 </script>
