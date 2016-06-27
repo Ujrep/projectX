@@ -13,11 +13,11 @@
   }
 
   .Card {
-        position: relative;
-        top: -580px;
+    position: relative;
   }
 
   .bg-card {
+    position: relative;
     height: 440px;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
@@ -83,21 +83,17 @@
 </style>
 
 <template>
-  <div class="Card container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="bg-card">
-          <img src="" alt=""/>
-          <h4>Adrian Stoian</h4>
-          <p class="location">Bucharest, Ro.</p>
-          <ul class="timeline">
-            <li>Visual Designer: <b>Kalon Global Group</b></p>
-            <li>UX / UI Designer: <b>GoldFishBrain</b></p>
-            <li>Personal Projects: <b>ThemeForest</b></p>
-            <li>Freelance: <b>2008 - Present</b></p>
-          </ul>
-        </div>
-      </div>
+  <div class="Card col-md-4">
+    <div class="bg-card">
+      <img src="" alt=""/>
+      <h4>Adrian Stoian</h4>
+      <p class="location">Bucharest, Ro.</p>
+      <ul class="timeline">
+        <li>Visual Designer: <b>Kalon Global Group</b></p>
+        <li>UX / UI Designer: <b>GoldFishBrain</b></p>
+        <li>Personal Projects: <b>ThemeForest</b></p>
+        <li>Freelance: <b>2008 - Present</b></p>
+      </ul>
     </div>
   </div>
 </template>

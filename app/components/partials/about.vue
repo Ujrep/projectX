@@ -25,8 +25,19 @@
     -moz-font-smoothing: antialiased;
   }
 
+  .About {
+    position: relative;
+    @include gradient;
+    margin-top: -120px;
+    z-index: -2;
+  }
+
+  .title {
+    margin: 0 0 100px 0;
+  }
+
   h2 {
-    margin-top: 100px;
+    padding-top: 200px;
     text-align: center;
     @include headlineView;
   }
@@ -37,30 +48,32 @@
     @include fontview;
   }
 
-  .bg-about {
-    display: block;
-    width: 100%;
-    height: 990px;
-    z-index: -99999;
-    margin-top: -290px;
-    @include gradient;
-  }
 </style>
 
 <template>
   <div class="About">
-    <div class"row"
-      <div class="container">
+    <div class="container">
+      <div class="row">
+      <div class="title">
         <h2>About Me</h2>
         <h3>llentesque sit amet ex vel ante fringilla fringilla. Praesent non tristique dolor.</h3>
       </div>
+      <card></card>
+      <skills></skills>
     </div>
-    <div class="bg-about"></div>
+    </div>
   </div>
 </template>
 
 <script>
+  import Card from 'components/partials/card.vue';
+  import Skills from 'components/partials/skills.vue';
+
   // JS HERE
   export default {
+    components: {
+      'card': Card,
+      'skills': Skills
+    }
   };
 </script>

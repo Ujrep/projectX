@@ -14,7 +14,6 @@
 
   .Skills {
     position: relative;
-    top: -820px;
     list-style: none;
 
     .ux {
@@ -50,20 +49,19 @@
     }
   }
 
+  ul {
+    list-style: none;
+  }
+
 </style>
 
 <template>
-  <div class="Skills container col-md-offset-6">
-    <div class="row col-md-1 col-md-offset-1">
-        <li class="ux">
-          <h5>UX / UI</h5>
-        </li>
-    </div>
-    <div class="row col-md-1">
-        <li class="mobile">
-          <h5>Mobile</h5>
-        </li>
-    </div>
+  <div class="Skills col-md-8">
+    <ul class="my-skills col-md-offset-2">
+      <li class="ux col-md-1">
+        <h5>UX / UI</h5>
+      </li>
+    </ul>
   </div>
 </template>
 
