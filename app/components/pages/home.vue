@@ -14,6 +14,7 @@
     <about></about>
     <uxs></uxs>
     <reviews></reviews>
+    <contact></contact>
     <!-- html -->
 
   </div>
@@ -27,6 +28,7 @@
   import About from 'components/partials/about.vue';
   import Uxs from 'components/partials/uxs.vue';
   import Reviews from 'components/partials/reviews.vue';
+  import Contact from 'components/partials/contact.vue';
   export default {
     data() {
       return {
@@ -40,6 +42,7 @@
       'about': About,
       'uxs': Uxs,
       'reviews': Reviews,
+      'contact': Contact,
     }
   };
 </script>
