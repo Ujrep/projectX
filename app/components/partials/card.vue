@@ -48,7 +48,7 @@
       width: 100%;
       height: 190px;
       border: none;
-      background: url('../images/mike.png');
+      background: none;
 
     }
   }
