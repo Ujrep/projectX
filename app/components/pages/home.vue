@@ -8,7 +8,7 @@
 
   <div class="Home">
     <navigation></navigation>
-    <header></header>
+    <custom-header></custom-header>
     <!-- html -->
 
   </div>
@@ -26,7 +26,7 @@
     },
     components: {
       'navigation': Navigation,
-      'header': Header,
+      'custom-header': Header,
     }
   };
 </script>
