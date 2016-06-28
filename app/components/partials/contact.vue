@@ -79,6 +79,7 @@
 
 .send-button-container {
   text-align: center;
+  padding-top: 60px;
 }
 .message {
   margin-top: 50px;
@@ -92,7 +93,6 @@
     text-decoration: none;
     border-radius: 10cm;
     color: #fff;
-    margin-top: 50px;
     background-color: $primary;
     @include fontView;
 
@@ -107,7 +107,7 @@
     font-size: 20px;
     text-align: center;
     color: $primary;
-    margin-top: 90px;
+    margin-top: 50px;
     @include fontView;
 
     &:hover {
