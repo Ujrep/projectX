@@ -49,41 +49,14 @@
     }
   }
 
-  .form {
-  }
-
-  .input {
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px solid $primary;
-    background: none;
-
-    &:focus {
-      outline: none;
-    }
-
-    &::-webkit-input-placeholder, -moz-input-placeholder {
-      font-size: 16px;
-      color: $darkGrey;
-      @include fontView;
-    }
-
-    &:required {
-      font-size: 16px;
-      color: $primary;
-      padding-left: 0;
-      @include fontView;
-    }
-  }
-
-  .message {
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px solid $primary;
-    margin-top: 90px;
-    background: none;
+.input-container {
+    & input {
+      width: 100%;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 2px solid $primary;
+      background: none;
 
     &:focus {
       outline: none;
@@ -102,6 +75,11 @@
       @include fontView;
     }
   }
+}
+
+.message {
+  margin-top: 50px;
+}
 
   .send-button {
     display: inline-block;
@@ -137,6 +115,20 @@
       text-decoration: none;
     }
   }
+
+  .social {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+    list-style: none;
+
+    & li {
+      display: inline-block;
+      padding-left: 40px;
+    }
+  }
+
 </style>
 
 <template>
@@ -150,15 +142,27 @@
     </div>
     <div class="form">
       <div class="row">
-        <input class="input col-md-4" type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required>
-        <input class="input col-md-4" type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required>
-        <input class="input col-md-4" type="tel" placeholder="Phone No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
-        <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
+        <div class="input-container col-md-4">
+          <input class="input" type="text" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required>
+        </div>
+        <div class="input-container col-md-4">
+          <input class="input col-md-4" type="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required>
+        </div>
+        <div class="input-container col-md-4">
+          <input class="input col-md-4" type="tel" placeholder="Phone No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
+        </div>
+        <div class="input-container message">
+          <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
+        </div>
       </div>
     </div>
     <a class="send-button" href="#">SEND</a>
     <a class="mail col-md-12" href="mailto:stoian.adrian91@gmail.com?subject=Work%20Opportunity">stoian.adrian91@gmail.com</a>
-  </div>
+    <ul class="social">
+      <li class="dribbble">Dr</li>
+      <li class="behance">Be</li>
+      <li class="linkedin">Ln</li>
+    </ul>
   </div>
 </template>
 
