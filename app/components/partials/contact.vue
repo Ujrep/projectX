@@ -77,15 +77,14 @@
   }
 }
 
+.send-button-container {
+  text-align: center;
+}
 .message {
   margin-top: 50px;
 }
 
   .send-button {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 10px 90px;
     font-size: 16px;
     font-weight: 700;
@@ -108,6 +107,7 @@
     font-size: 20px;
     text-align: center;
     color: $primary;
+    margin-top: 90px;
     @include fontView;
 
     &:hover {
@@ -126,6 +126,15 @@
     & li {
       display: inline-block;
       padding-left: 40px;
+      margin-top: 10px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      & a {
+        color: $darkGrey;
+      }
     }
   }
 
@@ -151,19 +160,32 @@
         <div class="input-container col-md-4">
           <input class="input col-md-4" type="tel" placeholder="Phone No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
         </div>
-        <div class="input-container message">
+        <div class="input-container message col-md-12">
           <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
         </div>
       </div>
     </div>
-    <a class="send-button" href="#">SEND</a>
-    <a class="mail col-md-12" href="mailto:stoian.adrian91@gmail.com?subject=Work%20Opportunity">stoian.adrian91@gmail.com</a>
-    <ul class="social">
-      <li class="dribbble">Dr</li>
-      <li class="behance">Be</li>
-      <li class="linkedin">Ln</li>
-    </ul>
+      <div class="row send-button-container">
+        <a class="send-button" href="#">SEND</a>
+      </div>
+      <div class="row">
+        <a class="mail col-md-12" href="mailto:stoian.adrian91@gmail.com?subject=Work%20Opportunity">stoian.adrian91@gmail.com</a>
+      </div>
+      <div class="row">
+        <ul class="social">
+          <li class="dribbble">
+            <a href="#">Dr</a>
+          </li>
+          <li class="behance">
+            <a href="#">Be</a>
+          </li>
+          <li class="linkedin">
+            <a href="#">Ln</a>
+          </li>
+        </ul>
+      </div>
   </div>
+</div>
 </template>
 
 <script>
