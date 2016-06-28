@@ -34,6 +34,7 @@
   }
 
   .feed01 {
+    display: inline-block;
     & h5 {
       font-size: 20px;
       text-align: center;
@@ -71,6 +72,7 @@
       padding-bottom: 90px;
       @include fontView;
     }
+
   }
 
   .arrow-left {
@@ -99,25 +101,25 @@
 <template>
   <div class="Reviews">
     <div class="container-fluid">
-      <div class="arrow-right"></div>
-      <div class="arrow-left"></div>
+      <div class="arrow-right" @click="goRight"></div>
+      <div class="arrow-left" @click="goLeft"></div>
     </div>
     <div class="container">
       <div class="row col-md-12">
         <ul class="slider">
-          <li class="feed01">
+          <li class="feed01" v-show="selected === 0">
             <div class="avatar"></div>
             <h5>Working with Adrian Stoian during the development of Sportonomy was a blessing.  His passion to his craft was only surpassed by the quality of his work.  We appreciated so much his creativity and inventiveness that allowed Sportonomy to truly come to life.  He went out of his way to make sure our needs were met and that is something we at Sportonomy truly value. 
     We look forward to our next opportunity to work with Adrian.</h5>
             <h6>Josh Racette</h6>
             <p>Sportonomy</p>
           </li>
-          <li class="feed01">
+          <li class="feed01" v-show="selected === 1">
             <div class="avatar"></div>
             <h5>Working with Adrian Stoian during the development of Sportonomy was a blessing.  His passion to his craft was only surpassed by the quality of his work.  We appreciated so much his creativity and inventiveness that allowed Sportonomy to truly come to life.  He went out of his way to make sure our needs were met and that is something we at Sportonomy truly value. 
     We look forward to our next opportunity to work with Adrian.</h5>
-            <h6>Josh Racette</h6>
-            <p>Sportonomy</p>
+            <h6>Ion Creanga</h6>
+            <p>Amintiri din copilarie</p>
           </li>
         </ul>
       </div>
@@ -128,5 +130,21 @@
 <script>
   // JS HERE
   export default {
+    data() {
+      return {
+        selected: 0
+      };
+    },
+
+    methods: {
+      goRight() {
+        this.selected++;
+        console.log(this.selected);
+      },
+      goLeft() {
+        this.selected--;
+        console.log(this.selected);
+      }
+    }
   };
 </script>
