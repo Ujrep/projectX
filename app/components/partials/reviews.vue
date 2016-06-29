@@ -1,6 +1,7 @@
 <style lang="scss">
 
   $primary: #38b48d;
+  $slides: 3;
 
   @mixin gradient {
     background: -webkit-linear-gradient(50deg,#0f1b2a, #1a2940);
@@ -23,7 +24,8 @@
   .slider {
     margin-top: 100px;
     list-style: none;
-
+    width: calc(100% * #{$slides});
+    transition: all .5s ease-in;
     .avatar {
       width: 130px;
       height: 130px;
@@ -33,8 +35,9 @@
     }
   }
 
-  .feed01 {
+  .feed {
     display: inline-block;
+    width: calc(100% / #{$slides});
     & h5 {
       font-size: 20px;
       text-align: center;
@@ -72,55 +75,52 @@
       padding-bottom: 90px;
       @include fontView;
     }
+  }
 
+  .slider-holder {
+    overflow: hidden;
   }
 
   .arrow-left {
     position: absolute;
     top: 50%;
     left: 5%;
-    transform: translateX(-50%);
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     background-color: $primary;
+    z-index: 2;
   }
 
   .arrow-right {
     position: absolute;
     top: 50%;
-    transform: translateX(-50%);
     transform: translateY(-50%);
     right: 5%;
     width: 50px;
     height: 50px;
     background-color: $primary;
+    z-index: 2;
   }
+
 </style>
 
 <template>
   <div class="Reviews">
     <div class="container-fluid">
-      <div class="arrow-right" @click="goRight"></div>
-      <div class="arrow-left" @click="goLeft"></div>
+      <div class="arrow-right" @click="goRight()"></div>
+      <div class="arrow-left" @click="goLeft()"></div>
     </div>
     <div class="container">
-      <div class="row col-md-12">
-        <ul class="slider">
-          <li class="feed01" v-show="selected === 0">
+      <div class="slider-holder">
+        <ul class="slider" id="slider">
+          <li class="feed" :class="{'selected': selected === $index}" v-for="review in reviews">
             <div class="avatar"></div>
-            <h5>Working with Adrian Stoian during the development of Sportonomy was a blessing.  His passion to his craft was only surpassed by the quality of his work.  We appreciated so much his creativity and inventiveness that allowed Sportonomy to truly come to life.  He went out of his way to make sure our needs were met and that is something we at Sportonomy truly value. 
-    We look forward to our next opportunity to work with Adrian.</h5>
-            <h6>Josh Racette</h6>
-            <p>Sportonomy</p>
+            <h5>{{ review.description }}</h5>
+            <h6>{{ review.author }}</h6>
+            <p>{{ review.company }}</p>
           </li>
-          <li class="feed01" v-show="selected === 1">
-            <div class="avatar"></div>
-            <h5>Working with Adrian Stoian during the development of Sportonomy was a blessing.  His passion to his craft was only surpassed by the quality of his work.  We appreciated so much his creativity and inventiveness that allowed Sportonomy to truly come to life.  He went out of his way to make sure our needs were met and that is something we at Sportonomy truly value. 
-    We look forward to our next opportunity to work with Adrian.</h5>
-            <h6>Ion Creanga</h6>
-            <p>Amintiri din copilarie</p>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -132,18 +132,54 @@
   export default {
     data() {
       return {
+        reviews: [
+          {
+            avatar: '',
+            description: 'Working with Adrian Stoian during the development of Sportonomy was a blessing. ' +
+                         'His passion to his craft was only surpassed by the quality of his work. ' +
+                         'We appreciated so much his creativity and inventiveness that allowed Sportonomy to ' +
+                         'truly come to life.  He went out of his way to make sure our needs were met and ' +
+                         'that is something we at Sportonomy truly value. ' +
+                         'We look forward to our next opportunity to work with Adrian.',
+            author: 'Josh Racette',
+            company: 'Sportonomy'
+          },
+          {
+            avatar: '',
+            description: 'Working with Adrian Stoian during the development of Sportonomy was a blessing. ',
+            author: 'John Branch',
+            company: 'Childhood memories'
+          },
+          {
+            avatar: '',
+            description: 'Working with Adrian Stoian during the development of Sportonomy was a blessing. ',
+            author: 'John Snow',
+            company: 'Winter Corporation'
+          }
+        ],
         selected: 0
       };
     },
 
     methods: {
       goRight() {
-        this.selected++;
-        console.log(this.selected);
+        if (this.selected + 1 > this.reviews.length - 1) {
+          this.selected = 0;
+        } else {
+          this.selected++;
+        }
+
+        document.getElementById('slider').style.marginLeft = -100 * this.selected + '%';
       },
+
       goLeft() {
-        this.selected--;
-        console.log(this.selected);
+        if (this.selected - 1 < 0) {
+          this.selected = this.reviews.length - 1;
+        } else {
+          this.selected--;
+        }
+
+        document.getElementById('slider').style.marginLeft = -100 * this.selected + '%';
       }
     }
   };
