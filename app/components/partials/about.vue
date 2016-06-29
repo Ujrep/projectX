@@ -51,7 +51,7 @@
 </style>
 
 <template>
-  <div class="About">
+  <div class="About" id="about">
     <div class="container">
       <div class="row">
       <div class="about-title">

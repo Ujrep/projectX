@@ -26,7 +26,7 @@
 </style>
 
 <template>
-  <div class="Portfolio container">
+  <div class="Portfolio container" id="portfolio">
     <div class="row firstrow">
       <div class="col-md-4">
         <a href="#" class="thumbnail">

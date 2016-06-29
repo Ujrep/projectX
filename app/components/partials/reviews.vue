@@ -118,7 +118,7 @@
 </style>
 
 <template>
-  <div class="Reviews">
+  <div class="Reviews" id="reviews">
     <div class="container-fluid">
       <div class="arrow-right" @click="goRight()"></div>
       <div class="arrow-left" @click="goLeft()"></div>

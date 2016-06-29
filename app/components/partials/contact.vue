@@ -145,7 +145,7 @@
 </style>
 
 <template>
-  <div class="Contact">
+  <div class="Contact" id="contact">
     <div class="container">
       <div class="row">
       <div class="contact-title">
