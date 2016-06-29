@@ -55,6 +55,7 @@
     <div class="container">
       <div class="row">
       <div class="about-title">
+        <svg class="Navigation-icon"><use xlink:href="#about"></use></svg>
         <h2>About Me</h2>
         <h3>llentesque sit amet ex vel ante fringilla fringilla. Praesent non tristique dolor.</h3>
       </div>
