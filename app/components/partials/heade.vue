@@ -10,6 +10,19 @@
     -moz-font-smoothing: antialiased;
   }
 
+  .heade {
+    position: relative;
+  }
+
+  .anchor-point {
+    position: absolute;
+    top: 620px;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    background-color: none;
+  }
+
   .description {
     font-size: 60px;
     font-weight: 100;
@@ -22,6 +35,7 @@
       color: $primary;
     }
   }
+
   .bg-image {
     position: fixed;
     background: url("/app/common/images/img-header.png") no-repeat;
@@ -40,6 +54,7 @@
 
 <template>
   <div class="Heade">
+    <span class="anchor-point" id="portfolio"></span>
     <h1 class="description container">Sed <span class="highlight01">magna</span> nulla, <span class="highlight02">tempor vitae</span> lorem eleifend, tempus porttitor velit nam pellentesque
 consectetur adipiscil</h1>
     <div class="bg-header bg-image"></div>
