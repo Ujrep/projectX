@@ -47,10 +47,20 @@ $primary: #38b48d;
 
   .bg-full {
     width: 100%;
-    height: 100px;
+    height: 60px;
+    transition: 0.5s linear;
     background-color: rgba(26, 41, 64, 0.9);
-  }
 
+    & li {
+      margin-top: 20px;
+      transition: 0.5s ease;
+      }
+
+    & .logo {
+      margin-top: 12px;
+      transition: 0.5s ease;
+    }
+  }
 </style>
 
 <template>

@@ -15,7 +15,7 @@
     background-color: $secondary;
   }
 
-  .go-back {
+  .page-scroll {
     & a {
       color: #fff;
       @include fontView;
@@ -27,7 +27,7 @@
   <div class="Footer">
     <div class="container">
         <div class="logo"></div>
-        <div class="go-back pull-right">
+        <div class="page-scroll pull-right">
           <a href="#">Back to Top</a>
         </div>
   </div>
@@ -35,7 +35,13 @@
 </template>
 
 <script>
-  // JS HERE
-  export default {
-  };
+  $(function() {
+     $('.page-scroll a').bind('click', function(event) {
+         var $anchor = $(this);
+         $('html, body').stop().animate({
+             scrollTop: $($anchor.attr('href')).offset().top
+         }, 1000, 'easeInOutExpo');
+         event.preventDefault();
+     });
+   });
 </script>
