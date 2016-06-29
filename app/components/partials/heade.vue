@@ -14,7 +14,7 @@
     font-size: 60px;
     font-weight: 100;
     text-align: center;
-    margin-top: 230px;
+    margin-top: 300px;
     color: #fff;
     @include fontView;
 

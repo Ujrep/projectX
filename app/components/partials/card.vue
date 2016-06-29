@@ -78,6 +78,7 @@
     height: 190px;
     border: none;
     background-image: url('/app/common/images/adrian.jpg');
+    background-size: 100%;
   }
 </style>
 

@@ -15,6 +15,7 @@
     <uxs></uxs>
     <reviews></reviews>
     <contact></contact>
+    <footerr></footerr>
     <!-- html -->
 
   </div>
@@ -29,6 +30,7 @@
   import Uxs from 'components/partials/uxs.vue';
   import Reviews from 'components/partials/reviews.vue';
   import Contact from 'components/partials/contact.vue';
+  import Footerr from 'components/partials/footerr.vue';
   export default {
     data() {
       return {
@@ -43,6 +45,7 @@
       'uxs': Uxs,
       'reviews': Reviews,
       'contact': Contact,
+      'footerr': Footerr,
     }
   };
 </script>

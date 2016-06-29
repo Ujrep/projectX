@@ -8,6 +8,7 @@ $primary: #38b48d;
   -moz-font-smoothing: antialiased;
 }
 
+
 .logo {
     font-weight: normal;
     font-size: 25px;
@@ -44,35 +45,47 @@ $primary: #38b48d;
     }
   }
 
+  .bg-full {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(26, 41, 64, 0.9);
+  }
+
 </style>
 
 <template>
-  <div class="Navigation container">
-    <div class="logo col-md-2">
-      <span>Adrian Stoian</span>
+  <div class="Navigation container-fluid navbar-fixed-top">
+    <div class="container">
+      <div class="logo col-md-2">
+        <span>Adrian Stoian</span>
+      </div>
+      <ul class="buttons pull-right">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Portfolio</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Reviews</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
     </div>
-    <ul class="buttons pull-right">
-      <li>
-        <a href="#">Home</a>
-      </li>
-      <li>
-        <a href="#">Portfolio</a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Reviews</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
-  // JS HERE
-  export default {
-  };
+  $(document).on("scroll",function(){
+    if ($(document).scrollTop() > 150){
+      $(".Navigation").addClass("bg-full");
+    } else {
+      $(".Navigation").removeClass("bg-full");
+    }
+  });
 </script>

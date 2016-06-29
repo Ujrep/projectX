@@ -26,9 +26,11 @@
   }
 
   .Contact {
+    height: 740px;
     position: relative;
     background: url('/app/common/images/bg-contact.png') no-repeat;
     background-size: 100% cover;
+    background-position: bottom;
   }
 
   .contact-title {
@@ -109,7 +111,7 @@
     font-size: 20px;
     text-align: center;
     color: $primary;
-    margin-top: 50px;
+    padding-top: 50px;
     @include fontView;
 
     &:hover {
@@ -163,7 +165,7 @@
           <input class="input col-md-4" type="tel" placeholder="Phone No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
         </div>
         <div class="input-container message col-md-12">
-          <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone No'" required>
+          <input class="message col-md-12" type="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required>
         </div>
       </div>
     </div>

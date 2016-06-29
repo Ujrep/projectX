@@ -26,6 +26,7 @@
     list-style: none;
     width: calc(100% * #{$slides});
     transition: all .5s ease-in;
+
     .avatar {
       width: 130px;
       height: 130px;
@@ -57,7 +58,7 @@
       margin-top: 26px;
 
       .loadingBar {
-        transition: all .1s ease-in-out;
+        transition: all 1s linear;
         position: absolute;
         left: 0;
         top: 0;
@@ -99,6 +100,7 @@
     height: 50px;
     background-color: $primary;
     z-index: 2;
+    cursor: pointer;
   }
 
   .arrow-right {
@@ -110,6 +112,7 @@
     height: 50px;
     background-color: $primary;
     z-index: 2;
+    cursor: pointer;
   }
 
 </style>

@@ -27,7 +27,7 @@
   .About {
     position: relative;
     @include gradient;
-    margin-top: -120px;
+    margin-top: -110px;
     z-index: -2;
   }
 
