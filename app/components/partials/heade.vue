@@ -22,6 +22,11 @@
       color: $primary;
     }
   }
+  .bg-image {
+    position: fixed;
+    background: url("/app/common/images/img-header.png") no-repeat;
+    background-size: cover;
+  }
 
   .bg-header {
     position: absolute;
@@ -37,7 +42,7 @@
   <div class="Heade">
     <h1 class="description container">Sed <span class="highlight01">magna</span> nulla, <span class="highlight02">tempor vitae</span> lorem eleifend, tempus porttitor velit nam pellentesque
 consectetur adipiscil</h1>
-    <div class="bg-header"></div>
+    <div class="bg-header bg-image"></div>
   </div>
 </template>
 

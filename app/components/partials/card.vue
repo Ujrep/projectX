@@ -20,7 +20,7 @@
     height: 440px;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-    background-image: url('/app/common/images/mike.png');
+
     &::before {
       content: "";
       position: absolute;
@@ -41,13 +41,6 @@
       height: 10px;
       transform: translateX(-50%);
       background-color: $primary;
-    }
-
-    img {
-      width: 100%;
-      height: 190px;
-      border: none;
-
     }
   }
 
@@ -79,11 +72,19 @@
       padding-top: 0;
     }
   }
+
+  .image {
+    width: 100%;
+    height: 190px;
+    border: none;
+    background-image: url('/app/common/images/adrian.jpg');
+  }
 </style>
 
 <template>
   <div class="Card col-md-4">
     <div class="bg-card">
+      <div class="image"></div>
       <h4>Adrian Stoian</h4>
       <p class="location">Bucharest, Ro.</p>
       <ul class="timeline">

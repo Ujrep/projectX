@@ -27,6 +27,8 @@
 
   .Contact {
     position: relative;
+    background: url('/app/common/images/bg-contact.png') no-repeat;
+    background-size: 100% cover;
   }
 
   .contact-title {
