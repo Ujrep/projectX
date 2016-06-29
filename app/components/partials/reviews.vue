@@ -39,20 +39,29 @@
     display: inline-block;
     width: calc(100% / #{$slides});
     & h5 {
+      padding: 0 100px;
       font-size: 20px;
       text-align: center;
       line-height: 30px;
       color: #fff;
       margin-top: 40px;
       @include fontView;
+    }
 
-      &::after {
-        display: block;
-        content: "";
-        width: 150px;
-        height: 1px;
-        margin: 0 auto;
-        margin-top: 26px;
+    .loadingArea {
+      position: relative;
+      display: block;
+      width: 150px;
+      height: 1px;
+      margin: 0 auto;
+      margin-top: 26px;
+
+      .loadingBar {
+        transition: all .1s ease-in-out;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
         background-color: $primary;
       }
     }
@@ -114,9 +123,13 @@
     <div class="container">
       <div class="slider-holder">
         <ul class="slider" id="slider">
-          <li class="feed" :class="{'selected': selected === $index}" v-for="review in reviews">
+          <li class="feed" v-for="review in reviews">
             <div class="avatar"></div>
-            <h5>{{ review.description }}</h5>
+            <h5>{{ review.description }}
+            </h5>
+            <div class="loadingArea">
+              <span class="loadingBar"></span>
+            </div>
             <h6>{{ review.author }}</h6>
             <p>{{ review.company }}</p>
           </li>
@@ -157,7 +170,9 @@
             company: 'Winter Corporation'
           }
         ],
-        selected: 0
+        selected: 0,
+        loadingTime: '',
+        secondsToLoad: 5000,
       };
     },
 
@@ -170,6 +185,7 @@
         }
 
         document.getElementById('slider').style.marginLeft = -100 * this.selected + '%';
+        this.loadBar()
       },
 
       goLeft() {
@@ -180,7 +196,28 @@
         }
 
         document.getElementById('slider').style.marginLeft = -100 * this.selected + '%';
+        this.loadBar()
+      },
+      loadBar() {
+        clearTimeout(this.loadingTime);
+        let allSeconds = 0;
+        let bar = document.getElementsByClassName('loadingBar')[this.selected];
+        bar.style.width = 0;
+        this.loadingTime = setInterval(() => {
+            allSeconds += 1000;
+
+            if (allSeconds / this.secondsToLoad > 1) {
+              bar.style.width = 0;
+              clearTimeout(this.loadingTime);
+              this.goRight();
+            } else {
+              bar.style.width = (allSeconds / this.secondsToLoad) * 100 + '%';
+            }
+        }, 1000);
       }
+    },
+    ready() {
+      this.loadBar();
     }
   };
 </script>

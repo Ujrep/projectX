@@ -1,5 +1,32 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const BASE_DIR = __dirname + '/app';
 const EXCLUDE = /node_modules/;
+
+function isProduction() {
+  if (process.env.NODE_ENV === 'production') {
+    return true;
+  }
+  return false;
+}
+
+const fileNamesMap = {
+  development: {
+    js: '[name].js',
+    css: 'css/[name].css',
+    other: '[path][name].[ext]'
+  },
+
+  production: {
+    js: '[name]-[hash].js',
+    css: 'css/[name]-[hash].css',
+    other: '[path][name]-[sha512:hash:base64:10].[ext]'
+  }
+};
+
+const fileNames = isProduction() ? fileNamesMap.production : fileNamesMap.development;
+
+const extractCSS = new ExtractTextPlugin(fileNames.css);
 
 module.exports = {
   context: BASE_DIR,
@@ -9,50 +36,72 @@ module.exports = {
   entry: 'main.js',
 
   output: {
-    filename: 'build/orbo-app.js',
+    path: __dirname + '/dist/',
+    filename: fileNames.js,
+    publicPath: '/dist/'
   },
 
   module: {
-    loaders: [
-      { test: /\.scss$/, loader: 'style!css!autoprefixer?{browsers:["last 2 version"]}!sass', exclude: EXCLUDE },
-      { test: /\.js$/, loader: 'babel', exclude: EXCLUDE },
-      { test: /\.vue$/, loader: 'vue', exclude: EXCLUDE },
-      { test: /\.(png|jpg)$/, loader: 'url?limit=8192' },
-    ],
+    loaders: (() => {
+      const list = [];
+
+      list.push([
+        { test: /\.js$/, loader: 'babel', exclude: EXCLUDE },
+        { test: /\.vue$/, loader: 'vue' },
+        { test: /\.(otf|woff(2))$/,
+          loader: 'url-loader?limit=1024',
+          exlude: EXCLUDE
+        }
+      ]);
+      if (isProduction()) {
+        list.push([
+          { test: /\.(png|jpg)$/,
+            loader: 'url-loader?name=images/[name].[ext]&limit=1024',
+            exlude: EXCLUDE
+          },
+          { test: /\.scss$/, loader: extractCSS.extract(['css', 'sass']) }
+        ]);
+      } else {
+        list.push([
+          { test: /\.(png|jpg)$/, loader: 'url?limit=8192' },
+          { test: /\.scss$/, loader: 'style!css!autoprefixer?{browsers:["last 2 version"]}!sass', exclude: EXCLUDE }
+        ]);
+      }
+      return list;
+    })()
   },
 
-  plugins: [
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     NODE_ENV: '"production"',
-    //   },
-    // }),
-    //
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //   },
-    // }),
-  ],
+  plugins: (() => {
+    const list = [];
 
-  devtool: '#source-map',
+    if (isProduction()) {
+      list.push(extractCSS);
+    }
+
+    return list;
+  })(),
+
+  devtool: isProduction() ? '' : '#source-map',
 
   babel: {
     presets: ['es2015', 'stage-1'],
-    plugins: ['transform-runtime'],
+    plugins: ['transform-runtime']
   },
 
   vue: {
     autoprefixer: {
-      browsers: ['last 2 versions'],
+      browsers: ['last 2 versions']
     },
     loaders: {
-      scss: 'style!css!sass',
-    },
+      scss: isProduction() ? extractCSS.extract(['css', 'sass']) : 'style!css!sass'
+    }
   },
 
   devServer: {
     port: 3000,
     colors: true,
-  },
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  }
 };

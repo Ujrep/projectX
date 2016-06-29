@@ -20,7 +20,7 @@
     height: 440px;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-
+    background-image: url('/app/common/images/mike.png');
     &::before {
       content: "";
       position: absolute;
@@ -84,7 +84,6 @@
 <template>
   <div class="Card col-md-4">
     <div class="bg-card">
-      <img src="" alt=""/>
       <h4>Adrian Stoian</h4>
       <p class="location">Bucharest, Ro.</p>
       <ul class="timeline">
