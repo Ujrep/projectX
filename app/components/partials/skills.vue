@@ -26,10 +26,16 @@
 
     .my-skills {
       padding-top: 170px;
-      padding-left: 322px;
+      padding-left: 250px;
     }
 
-    .ux {
+    .notLoaded {
+      .line span {
+        height: 0;
+      }
+    }
+
+    .line {
       float: left;
       position: relative;
       width: 70px;
@@ -42,10 +48,9 @@
         bottom: 0;
         width: 100%;
         height: 98%;
-        background-color: #e4c94b;
+        transition: all 1s linear;
 
         &:before {
-          content: 'UX / UI';
           position: absolute;
           top: -30px;
           font-size: 14px;
@@ -54,122 +59,60 @@
           text-align: center;
           text-transform: capitalize;
           @include fontView;
+        }
+      }
+    }
+
+    .ux {
+      & span {
+        background-color: #e4c94b;
+        &:before {
+          content: 'UX / UI';
         }
       }
     }
 
     .mobile {
-      float: left;
-      position: relative;
-      width: 70px;
-      height: 380px;
-      margin-right: 27px;
-      background-color: none ;
-
       & span {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 95%;
-        margin-right: 30px;
         background-color: #4ccea8;
-
+        margin-right: 30px;
+        height: 95%;
         &:before {
           content: 'Mobile Design';
-          position: absolute;
-          top: -50px;
-          font-size: 14px;
-          width: 100%;
-          color: #fff;
-          text-align: center;
-          text-transform: capitalize;
-          @include fontView;
+          top: -40px;
         }
       }
     }
 
     .motion {
-      float: left;
-      position: relative;
-      width: 70px;
-      height: 380px;
-      margin-right: 27px;
-      background-color: none ;
-
       & span {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 80%;
         background-color: #5099b4;
-
+        height: 80%;
         &:before {
           content: 'Motion & Interaction';
-          position: absolute;
-          top: -50px;
-          font-size: 14px;
-          width: 100%;
-          color: #fff;
-          text-align: center;
-          text-transform: capitalize;
-          @include fontView;
+          top: -40px;
         }
       }
     }
 
     .html {
-      float: left;
-      position: relative;
-      width: 70px;
-      height: 380px;
-      margin-right: 27px;
-      background-color: none ;
-
       & span {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 65%;
         background-color: #a785bd;
+        height: 65%;
 
         &:before {
           content: 'HTML / CSS';
-          position: absolute;
-          top: -30px;
-          font-size: 14px;
-          width: 100%;
-          color: #fff;
-          text-align: center;
-          text-transform: capitalize;
-          @include fontView;
         }
       }
     }
 
     .branding {
-      position: relative;
-      width: 70px;
-      height: 380px;
-      padding: 0;
-      background-color: none ;
-
       & span {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 80%;
         background-color: #da77ab;
+        height: 80%;
 
         &:before {
           content: 'Branding';
-          position: absolute;
-          top: -30px;
-          font-size: 14px;
-          width: 100%;
-          color: #fff;
-          text-align: center;
-          text-transform: capitalize;
-          @include fontView;
         }
       }
     }
@@ -235,7 +178,7 @@
 <template>
   <div class="Skills">
     <div class="my-skills col-md-8">
-      <div class="row relative">
+      <div class="row relative notLoaded">
         <div class="lines">
           <span></span>
           <span></span>
@@ -246,19 +189,19 @@
           <span></span>
           <span></span>
         </div>
-        <div class="ux">
+        <div class="line ux">
           <span></span>
         </div>
-        <div class="mobile">
+        <div class="line mobile">
           <span></span>
         </div>
-        <div class="motion">
+        <div class="line motion">
           <span></span>
         </div>
-        <div class="html">
+        <div class="line html">
           <span></span>
         </div>
-        <div class="branding">
+        <div class="line branding">
           <span></span>
         </div>
     </div>
@@ -268,5 +211,32 @@
 <script>
   // JS HERE
   export default {
+    data() {
+      return {
+        scrolledIntoView: false
+      }
+    },
+    methods: {
+      checkElementVisibility() {
+        var el = $('.notLoaded');
+
+        $(document).on("scroll", () => {
+          if (this.isScrolledIntoView(el)) {
+            el.removeClass('notLoaded');
+            $(this).off('scroll');
+          }
+        });
+      },
+      isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop(),
+        	  docViewBottom = docViewTop + $(window).height(),
+        	  elemTop = $(elem).offset().top,
+            elemBottom = elemTop + $(elem).height();
+       return ((elemTop + ((elemBottom - elemTop)/2)) >= docViewTop && ((elemTop + ((elemBottom - elemTop)/2)) <= docViewBottom));
+      }
+    },
+    ready() {
+      this.checkElementVisibility();
+    }
   };
 </script>
