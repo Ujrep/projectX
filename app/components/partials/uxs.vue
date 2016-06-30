@@ -9,7 +9,7 @@
 
   .Uxs {
     position: relative;
-
+    height: 1000px;
     & h4 {
       width: 270px;
       padding: 135px 0;
@@ -19,6 +19,7 @@
 
   .line01 {
     display: block;
+    display: none;
     position: absolute;
     top: 30px;
     left: 30%;

@@ -12,7 +12,7 @@
     <heade></heade>
     <portfolio></portfolio>
     <about></about>
-    <uxs></uxs>
+    <!-- <uxs></uxs> -->
     <reviews></reviews>
     <contact></contact>
     <footerr></footerr>

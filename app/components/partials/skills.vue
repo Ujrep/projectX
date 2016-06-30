@@ -4,6 +4,7 @@
   $secondary: #1a2940;
   $darkGrey: #3d3d3d;
   $lightGrey: #787878;
+  $yellow: #e4c94b;
 
   @mixin fontView {
     font-family: 'Catamaran', sans-serif;
@@ -70,6 +71,34 @@
           content: 'UX / UI';
         }
       }
+
+      .printScreen {
+        background-image: url('/app/common/images/adrian.jpg');
+        width: 300px;
+        height: 400px;
+        background-size: cover;
+        position: absolute;
+        margin-top: 30px;
+      }
+
+      h4 {
+        position: absolute;
+        left: -150px;
+        bottom: -20px;
+      }
+
+      .path-first {
+        width: 400px;
+        height: 100px;
+
+        border-right: 2px solid $yellow;
+        border-bottom: 2px solid $yellow;
+      }
+
+      .path-second {
+        width: 2px;
+        height: 0px;
+      }
     }
 
     .mobile {
@@ -82,6 +111,28 @@
           top: -40px;
         }
       }
+
+      .path {
+        &:before {
+          border: 2px solid #4ccea8;
+        }
+      }
+
+      .path-first {
+        width: 50px;
+        height: 200px;
+
+        border-right: 2px solid #4ccea8;
+        border-bottom: 2px solid #4ccea8;
+      }
+
+      .path-second {
+        width: 2px;
+        height: 150px;
+
+        border-left: 2px solid #4ccea8;
+      }
+
     }
 
     .motion {
@@ -92,6 +143,27 @@
           content: 'Motion & Interaction';
           top: -40px;
         }
+      }
+
+      .path {
+        &:before {
+          border: 2px solid #5099b4;
+        }
+      }
+
+      .path-first {
+        width: 200px;
+        height: 250px;
+
+        border-right: 2px solid #5099b4;
+        border-bottom: 2px solid #5099b4;
+      }
+
+      .path-second {
+        width: 200px;
+        height: 300px;
+
+        border-left: 2px solid #5099b4;
       }
     }
 
@@ -104,6 +176,27 @@
           content: 'HTML / CSS';
         }
       }
+
+      .path {
+        &:before {
+          border: 2px solid #a785bd;
+        }
+      }
+
+      .path-first {
+        width: 100px;
+        height: 600px;
+
+        border-right: 2px solid #a785bd;
+        border-bottom: 2px solid #a785bd;
+      }
+
+      .path-second {
+        width: 100px;
+        height: 200px;
+
+        border-left: 2px solid #a785bd;
+      }
     }
 
     .branding {
@@ -114,6 +207,27 @@
         &:before {
           content: 'Branding';
         }
+      }
+
+      .path {
+        &:before {
+          border: 2px solid #da77ab;
+        }
+      }
+
+      .path-first {
+        width: 300px;
+        height: 150px;
+
+        border-right: 2px solid #da77ab;
+        border-bottom: 2px solid #da77ab;
+      }
+
+      .path-second {
+        width: 200px;
+        height: 300px;
+
+        border-left: 2px solid #da77ab;
       }
     }
   }
@@ -173,6 +287,51 @@
     }
   }
 
+  .paths {
+    position: absolute;
+    bottom: -20px;
+    right: 50%;
+
+    transform: translateY(100%);
+  }
+
+  .path {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $yellow;
+
+      border-radius: 50%;
+    }
+
+    &.top-right {
+      &:before {
+        top: -8px;
+        right: -4px;
+      }
+    }
+    &.top-left {
+      &:before {
+        top: -8px;
+        left: -4px;
+      }
+    }
+    &.bottom-right {
+      &:before {
+        bottom: -8px;
+        right: -4px;
+      }
+    }
+    &.bottom-left {
+      &:before {
+        bottom: -8px;
+        left: -4px;
+      }
+    }
+  }
+
 </style>
 
 <template>
@@ -191,25 +350,57 @@
         </div>
         <div class="line ux">
           <span></span>
+          <div class="paths">
+            <div class="path path-first top-right">
+            </div>
+            <div class="path path-second bottom-left">
+            </div>
+            <h4>UX / UI</h4>
+            <div class="printScreen"></div>
+          </div>
         </div>
         <div class="line mobile">
           <span></span>
+          <div class="paths">
+            <div class="path path-first bottom-left">
+            </div>
+            <div class="path path-second top-right">
+            </div>
+          </div>
         </div>
         <div class="line motion">
           <span></span>
+          <div class="paths">
+            <div class="path path-first bottom-left">
+            </div>
+            <div class="path path-second top-right">
+            </div>
+          </div>
         </div>
         <div class="line html">
           <span></span>
+          <div class="paths">
+            <div class="path path-first bottom-left">
+            </div>
+            <div class="path path-second top-right">
+            </div>
+          </div>
         </div>
         <div class="line branding">
           <span></span>
+          <div class="paths">
+            <div class="path path-first bottom-left">
+            </div>
+            <div class="path path-second top-right">
+            </div>
+          </div>
         </div>
     </div>
   </div>
 </template>
 
 <script>
-  // JS HERE
+
   export default {
     data() {
       return {
@@ -221,9 +412,8 @@
         var el = $('.notLoaded');
 
         $(document).on("scroll", () => {
-          if (this.isScrolledIntoView(el)) {
+          if (this.isScrolledIntoView(el) && el.hasClass('notLoaded')) {
             el.removeClass('notLoaded');
-            $(this).off('scroll');
           }
         });
       },

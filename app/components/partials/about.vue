@@ -29,6 +29,7 @@
     @include gradient;
     margin-top: -110px;
     z-index: -2;
+    margin-bottom: 1000px;
   }
 
   .about-title {
